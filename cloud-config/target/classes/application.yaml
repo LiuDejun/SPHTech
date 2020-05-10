@@ -1,0 +1,27 @@
+server:
+  port: 8070
+
+spring:
+  application:
+    name: cloud-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/spring-cloud-config-test.git
+      label: master 
+  security: 
+    user:
+      name: LDJ 
+      password: 123456 
+
+encrypt:
+  key: cntest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://LDJ:123456@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}

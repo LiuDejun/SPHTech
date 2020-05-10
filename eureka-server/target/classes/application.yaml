@@ -1,0 +1,17 @@
+server:
+  port: 8761
+
+spring:
+  security:
+    user:
+      name: LDJ
+      password: 123456
+
+eureka:
+  instance:
+    hostname:localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url: # eureka服务地址
+      defaultZone: http://LDJ:123456@localhost:8761/eureka

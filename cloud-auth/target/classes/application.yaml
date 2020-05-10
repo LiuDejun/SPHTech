@@ -1,0 +1,27 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  instance:
+    prefer-ip-address:true
+    instance-id:${spring.cloud.client.ip-address}:${server.port}
+
+server:
+  port: 8097
+spring:
+  application:
+    name: gateway-auth
+  #redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    database: 1
+    timeout: 60s
+    jedis:
+      pool:
+        max-active:-1
+        max-idle:15
+        max-wait:-1s
+        min-idle:5
+ 

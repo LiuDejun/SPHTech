@@ -1,0 +1,18 @@
+server:
+  port: 10011
+
+spring:
+  application:
+    name: support-service
+
+eureka:
+  client:
+    service-url:
+      # eureka服务地址,高可用可以配置多�?
+      defaultZone: http://LDJ:123456@localhost:8761/eureka
+
+  instance:
+    prefer-ip-address: true
+    # 服务标识，默认带主机�?
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
